@@ -1,0 +1,17 @@
+[Unit]
+Description=AuraFit Backend (Node/Express)
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/aurafit-backend
+EnvironmentFile=/opt/aurafit-backend/.env
+ExecStart=/usr/bin/node dist/server.js
+Restart=on-failure
+RestartSec=5
+StandardOutput=append:/var/log/aurafit-backend.log
+StandardError=append:/var/log/aurafit-backend.log
+
+[Install]
+WantedBy=multi-user.target
