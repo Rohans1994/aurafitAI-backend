@@ -170,7 +170,7 @@ aiRouter.post('/live-session-token', async (_req, res) => {
     }
 });
 
-app.use('/api/ai', aiRouter);
+app.use('/ai', aiRouter);
 
 app.listen(PORT, () => {
     console.log(`AuraFit backend running on port ${PORT}`);
